@@ -38,6 +38,8 @@ int findCountEvenNumbers(int[] incomingArray)
 
 Console.Clear();
 Console.WriteLine("Приветствую! Эта программа покажет количество чётных чисел в случайном массиве с положительными трёхзначными числами");
+Console.WriteLine("(В скобках справа от найденного числа показано место в массиве по счету слева направо для легкого нахождения и сравнения. Не индекс!)");
+
 string userChoice = "y";
 while (userChoice.ToLower() == "y")
 {
