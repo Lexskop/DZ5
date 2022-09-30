@@ -21,23 +21,27 @@ void PrintArray(int[] collection)
     Console.WriteLine("]");
 }
 
-int findNumberArray(int[] incomingArray)
+void findNumberArray(int[] incomingArray)
 {
-    int res = 0;
+    int[] result = new int[incomingArray.Length / 2 + (incomingArray.Length % 2)];
     for (int index = 0; index <= (incomingArray.Length - 1) / 2; index++)
     {
         if (index < (incomingArray.Length - 1) / 2 || incomingArray.Length % 2 == 0)
         {
-        res = incomingArray[index] * incomingArray[(incomingArray.Length - 1) - index];
-        Console.Write($"{res} ");
+            result[index] = incomingArray[index] * incomingArray[(incomingArray.Length - 1) - index];
         }
         else if (index == (incomingArray.Length - 1) / 2 || incomingArray.Length % 2 == 1)
         {
-            res = incomingArray[index];
-            Console.Write($"{res}");
+            result[index] = incomingArray[index];
         }
     }
-    return res;
+    Console.Write($"Получили новый массив -> [");
+    for (int index = 0; index < result.Length-1; index++)
+        {
+            Console.Write($"{result[index]},");
+        }
+            Console.Write($"{result[result.Length-1]}");
+            Console.WriteLine("]");
 }
 
 Console.Clear();
@@ -52,7 +56,6 @@ while (userChoice.ToLower() == "y")
     }
     PrintArray(arr);
     findNumberArray(arr);
-    Console.WriteLine("");
 
     Console.WriteLine("Вы хотите продолжить работу с программой? Да - Y, Нет - N");
     userChoice = Console.ReadLine();
