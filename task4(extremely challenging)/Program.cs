@@ -21,7 +21,7 @@ void PrintArray(int[] collection)
     Console.WriteLine("]");
 }
 
-void findNumberArray(int[] incomingArray)
+void calcNewArray(int[] incomingArray)
 {
     int[] result = new int[incomingArray.Length / 2 + (incomingArray.Length % 2)];
     for (int index = 0; index <= (incomingArray.Length - 1) / 2; index++)
@@ -55,7 +55,7 @@ while (userChoice.ToLower() == "y")
         arr[i] = randomNum(1, 10);
     }
     PrintArray(arr);
-    findNumberArray(arr);
+    calcNewArray(arr);
 
     Console.WriteLine("Вы хотите продолжить работу с программой? Да - Y, Нет - N");
     userChoice = Console.ReadLine();
